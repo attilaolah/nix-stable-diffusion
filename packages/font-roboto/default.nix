@@ -1,5 +1,8 @@
-{ buildPythonPackage, fetchPypi, lib }:
-
+{
+  buildPythonPackage,
+  fetchPypi,
+  lib,
+}:
 buildPythonPackage rec {
   pname = "font-roboto";
   version = "0.0.1";

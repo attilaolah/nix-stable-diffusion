@@ -1,10 +1,10 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, pythonOlder
-, starlette
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  pythonOlder,
+  starlette,
 }:
-
 buildPythonPackage rec {
   pname = "fastapi-events";
   version = "0.6.0";

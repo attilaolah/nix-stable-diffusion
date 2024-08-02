@@ -1,10 +1,10 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, fastapi
-, python-socketio
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  fastapi,
+  python-socketio,
 }:
-
 buildPythonPackage rec {
   pname = "fastapi-socketio";
   version = "0.0.9";

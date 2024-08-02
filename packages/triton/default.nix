@@ -1,9 +1,14 @@
 # WARNING: This file was automatically generated. You should avoid editing it.
 # If you run pynixify again, the file will be either overwritten or
 # deleted, and you will lose the changes you made to it.
-
-{ buildPythonPackage, fetchFromGitHub, lib, cmake, fetchPypi, llvm }:
-
+{
+  buildPythonPackage,
+  fetchFromGitHub,
+  lib,
+  cmake,
+  fetchPypi,
+  llvm,
+}:
 buildPythonPackage rec {
   pname = "triton";
   version = "2.0.0";
@@ -16,14 +21,20 @@ buildPythonPackage rec {
   };
   #sourceRoot = ["source/python"];
 
-  LLVM_ROOT_DIR="${llvm}";
-  nativeBuildInputs = [ cmake llvm ]; #llvm clang git ];
+  LLVM_ROOT_DIR = "${llvm}";
+  nativeBuildInputs = [cmake llvm]; #llvm clang git ];
   #propagatedBuildInputs = [ torch filelock ncurses zlib pybind11 cmake-py ];
 
-  /* postConfigure = '' */
-  /*   cd .. */
-  /* ''; */
-  /*  */
+  /*
+  postConfigure = ''
+  */
+  /*
+  cd ..
+  */
+  /*
+  '';
+  */
+  /**/
 
   # TODO FIXME
   doCheck = false;

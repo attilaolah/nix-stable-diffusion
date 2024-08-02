@@ -1,10 +1,10 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, pythonOlder
-, ffmpeg
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  pythonOlder,
+  ffmpeg,
 }:
-
 buildPythonPackage rec {
   pname = "ffmpy";
   version = "0.3.0";
@@ -23,12 +23,12 @@ buildPythonPackage rec {
     ffmpeg
   ];
 
-  pythonImportsCheck = [ "ffmpy" ];
+  pythonImportsCheck = ["ffmpy"];
 
   meta = with lib; {
     description = "A simple python interface for FFmpeg/FFprobe";
     homepage = "https://github.com/Ch00k/ffmpy";
     license = licenses.mit;
-    maintainers = with maintainers; [ pbsds ];
+    maintainers = with maintainers; [pbsds];
   };
 }

@@ -1,6 +1,13 @@
-{ buildPythonPackage, fetchPypi, lib, numpy, tqdm, scipy, torch
-  , torchvision }:
-
+{
+  buildPythonPackage,
+  fetchPypi,
+  lib,
+  numpy,
+  tqdm,
+  scipy,
+  torch,
+  torchvision,
+}:
 buildPythonPackage rec {
   pname = "lpips";
   version = "0.1.4";
@@ -10,8 +17,7 @@ buildPythonPackage rec {
     sha256 = "OEYzHfbGloiuw9MApe7vbFKUNbyEYL1YIBw9YuVhiPo=";
   };
 
-  propagatedBuildInputs =
-    [ numpy tqdm scipy torch torchvision ];
+  propagatedBuildInputs = [numpy tqdm scipy torch torchvision];
 
   # TODO FIXME
   doCheck = false;

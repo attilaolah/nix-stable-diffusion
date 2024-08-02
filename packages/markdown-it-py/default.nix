@@ -1,18 +1,18 @@
-{ lib
-, attrs
-, buildPythonPackage
-, fetchFromGitHub
-, linkify-it-py
-, mdit-py-plugins
-, mdurl
-, psutil
-, pytest-benchmark
-, pytest-regressions
-, pytestCheckHook
-, pythonOlder
-, typing-extensions
+{
+  lib,
+  attrs,
+  buildPythonPackage,
+  fetchFromGitHub,
+  linkify-it-py,
+  mdit-py-plugins,
+  mdurl,
+  psutil,
+  pytest-benchmark,
+  pytest-regressions,
+  pytestCheckHook,
+  pythonOlder,
+  typing-extensions,
 }:
-
 buildPythonPackage rec {
   pname = "markdown-it-py";
   version = "2.1.0";
@@ -35,17 +35,18 @@ buildPythonPackage rec {
       --replace "linkify-it-py~=1.0" "linkify-it-py>=1,<3"
   '';
 
-
-  propagatedBuildInputs = [
-    attrs
-    mdurl
-  ] ++ lib.optional (pythonOlder "3.8") [
-    typing-extensions
-  ];
+  propagatedBuildInputs =
+    [
+      attrs
+      mdurl
+    ]
+    ++ lib.optional (pythonOlder "3.8") [
+      typing-extensions
+    ];
 
   passthru.optional-dependencies = {
-    linkify = [ linkify-it-py ];
-    plugins = [ mdit-py-plugins ];
+    linkify = [linkify-it-py];
+    plugins = [mdit-py-plugins];
   };
 
   checkInputs = [
@@ -65,6 +66,6 @@ buildPythonPackage rec {
     homepage = "https://markdown-it-py.readthedocs.io/";
     changelog = "https://github.com/executablebooks/markdown-it-py/blob/${src.rev}/CHANGELOG.md";
     license = licenses.mit;
-    maintainers = with maintainers; [ bhipple ];
+    maintainers = with maintainers; [bhipple];
   };
 }

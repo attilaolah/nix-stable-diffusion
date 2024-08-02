@@ -1,10 +1,10 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, jsonschema
-, pytestCheckHook
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  jsonschema,
+  pytestCheckHook,
 }:
-
 buildPythonPackage rec {
   pname = "jsonmerge";
   version = "1.8.0";
@@ -14,9 +14,9 @@ buildPythonPackage rec {
     sha256 = "a86bfc44f32f6a28b749743df8960a4ce1930666b3b73882513825f845cb9558";
   };
 
-  propagatedBuildInputs = [ jsonschema ];
+  propagatedBuildInputs = [jsonschema];
 
-  checkInputs = [ pytestCheckHook ];
+  checkInputs = [pytestCheckHook];
 
   disabledTests = [
     # Fails with "Unresolvable JSON pointer"
@@ -29,6 +29,6 @@ buildPythonPackage rec {
     homepage = "https://github.com/avian2/jsonmerge";
     changelog = "https://github.com/avian2/jsonmerge/blob/jsonmerge-${version}/ChangeLog";
     license = licenses.mit;
-    maintainers = with maintainers; [ emily ];
+    maintainers = with maintainers; [emily];
   };
 }

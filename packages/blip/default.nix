@@ -1,11 +1,12 @@
 {
-  stdenv
-  , fetchFromGitHub
-  , timm
-  , transformers
-  , fairscale
-  , lib
-, buildPythonPackage}:
+  stdenv,
+  fetchFromGitHub,
+  timm,
+  transformers,
+  fairscale,
+  lib,
+  buildPythonPackage,
+}:
 buildPythonPackage rec {
   pname = "blip";
   version = "0.1.0";
@@ -17,7 +18,6 @@ buildPythonPackage rec {
     sha256 = "sha256-0IO+3M/Gy4VrNBFYYgZB2CzWhT3PTGBXNKPad61px5k=";
   };
 
-
   buildPhase = ''
     mkdir -p $out/lib/python3.10/site-packages
     cp -R ./ $out/lib/python3.10/site-packages/blip/
@@ -25,7 +25,7 @@ buildPythonPackage rec {
 
   dontInstall = true;
 
-  format="other";
+  format = "other";
 
   propagatedBuildInputs = [
     timm
@@ -42,9 +42,7 @@ buildPythonPackage rec {
   doCheck = false;
 
   meta = with lib; {
-    description =
-      "Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation";
+    description = "Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation";
     homepage = "https://github.com/salesforce/BLIP";
   };
 }
-

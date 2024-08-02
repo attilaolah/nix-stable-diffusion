@@ -1,48 +1,48 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, pythonOlder
-, writeTextFile
-, setuptools
-, analytics-python
-, aiohttp
-, fastapi
-, ffmpy
-, markdown-it-py
-, linkify-it-py
-, mdit-py-plugins
-, matplotlib
-, numpy
-, orjson
-, pandas
-, paramiko
-, pillow
-, pycryptodome
-, python-multipart
-, pydub
-, requests
-, uvicorn
-, jinja2
-, fsspec
-, httpx
-, pydantic
-, typing-extensions
-, pytest-asyncio
-, mlflow
-, huggingface-hub
-, transformers
-, wandb
-, respx
-, scikitimage
-, shap
-, ipython
-, hatchling
-, hatch-requirements-txt
-, hatch-fancy-pypi-readme
-, pytestCheckHook
-, websockets
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  pythonOlder,
+  writeTextFile,
+  setuptools,
+  analytics-python,
+  aiohttp,
+  fastapi,
+  ffmpy,
+  markdown-it-py,
+  linkify-it-py,
+  mdit-py-plugins,
+  matplotlib,
+  numpy,
+  orjson,
+  pandas,
+  paramiko,
+  pillow,
+  pycryptodome,
+  python-multipart,
+  pydub,
+  requests,
+  uvicorn,
+  jinja2,
+  fsspec,
+  httpx,
+  pydantic,
+  typing-extensions,
+  pytest-asyncio,
+  mlflow,
+  huggingface-hub,
+  transformers,
+  wandb,
+  respx,
+  scikitimage,
+  shap,
+  ipython,
+  hatchling,
+  hatch-requirements-txt,
+  hatch-fancy-pypi-readme,
+  pytestCheckHook,
+  websockets,
 }:
-
 buildPythonPackage rec {
   pname = "gradio";
   version = "3.5";
@@ -61,29 +61,31 @@ buildPythonPackage rec {
     hatch-requirements-txt
     hatch-fancy-pypi-readme
   ];
-  propagatedBuildInputs = [
-    analytics-python
-    aiohttp
-    fastapi
-    ffmpy
-    matplotlib
-    numpy
-    orjson
-    pandas
-    paramiko
-    pillow
-    pycryptodome
-    python-multipart
-    pydub
-    requests
-    uvicorn
-    jinja2
-    fsspec
-    httpx
-    pydantic
-    websockets
-    markdown-it-py
-  ] ++ markdown-it-py.optional-dependencies.plugins
+  propagatedBuildInputs =
+    [
+      analytics-python
+      aiohttp
+      fastapi
+      ffmpy
+      matplotlib
+      numpy
+      orjson
+      pandas
+      paramiko
+      pillow
+      pycryptodome
+      python-multipart
+      pydub
+      requests
+      uvicorn
+      jinja2
+      fsspec
+      httpx
+      pydantic
+      websockets
+      markdown-it-py
+    ]
+    ++ markdown-it-py.optional-dependencies.plugins
     ++ markdown-it-py.optional-dependencies.linkify;
 
   postPatch = ''

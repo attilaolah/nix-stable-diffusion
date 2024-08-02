@@ -1,11 +1,11 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, pythonOlder
-, hatchling
-, packaging
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  pythonOlder,
+  hatchling,
+  packaging,
 }:
-
 buildPythonPackage rec {
   pname = "hatch-requirements-txt";
   version = "0.2.0";

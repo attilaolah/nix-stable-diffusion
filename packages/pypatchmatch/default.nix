@@ -1,5 +1,15 @@
-{ buildPythonPackage, lib, numpy, fetchFromGitHub, pillow, tqdm, setuptools, stdenv, pkg-config, opencv4 }:
-let
+{
+  buildPythonPackage,
+  lib,
+  numpy,
+  fetchFromGitHub,
+  pillow,
+  tqdm,
+  setuptools,
+  stdenv,
+  pkg-config,
+  opencv4,
+}: let
   version = "1.0.0";
   src = fetchFromGitHub {
     owner = "mauwii";
@@ -9,7 +19,7 @@ let
   };
   libpatchmatch = stdenv.mkDerivation {
     name = "libpatchmatch";
-    sourceRoot = [ "source/patchmatch" ];
+    sourceRoot = ["source/patchmatch"];
     nativeBuildInputs = [
       pkg-config
       opencv4
@@ -22,23 +32,23 @@ let
     '';
   };
 in
-buildPythonPackage {
-  pname = "pypatchmatch";
-  inherit src version;
+  buildPythonPackage {
+    pname = "pypatchmatch";
+    inherit src version;
 
-  format = "pyproject";
-  buildInputs = [ setuptools ];
-  propagatedBuildInputs = [ numpy pillow tqdm ];
+    format = "pyproject";
+    buildInputs = [setuptools];
+    propagatedBuildInputs = [numpy pillow tqdm];
 
-  # TODO FIXME
-  doCheck = false;
+    # TODO FIXME
+    doCheck = false;
 
-  postInstall = ''
-    cp ${libpatchmatch}/lib/libpatchmatch.so $out/lib/*/site-packages/patchmatch/
-  '';
+    postInstall = ''
+      cp ${libpatchmatch}/lib/libpatchmatch.so $out/lib/*/site-packages/patchmatch/
+    '';
 
-  meta = {
-    description = "This library implements the PatchMatch based inpainting algorithm";
-    homepage = "https://github.com/invoke-ai/PyPatchMatch";
-  };
-}
+    meta = {
+      description = "This library implements the PatchMatch based inpainting algorithm";
+      homepage = "https://github.com/invoke-ai/PyPatchMatch";
+    };
+  }

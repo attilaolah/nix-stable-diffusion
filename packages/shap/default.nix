@@ -1,31 +1,31 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, writeText
-, isPy27
-, pytestCheckHook
-, pytest-mpl
-, numpy
-, scipy
-, scikit-learn
-, pandas
-, transformers
-, opencv4
-, lightgbm
-, catboost
-, pyspark
-, sentencepiece
-, tqdm
-, slicer
-, numba
-, matplotlib
-, nose
-, lime
-, cloudpickle
-, ipython
-, packaging
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  writeText,
+  isPy27,
+  pytestCheckHook,
+  pytest-mpl,
+  numpy,
+  scipy,
+  scikit-learn,
+  pandas,
+  transformers,
+  opencv4,
+  lightgbm,
+  catboost,
+  pyspark,
+  sentencepiece,
+  tqdm,
+  slicer,
+  numba,
+  matplotlib,
+  nose,
+  lime,
+  cloudpickle,
+  ipython,
+  packaging,
 }:
-
 buildPythonPackage rec {
   pname = "shap";
   version = "0.41.0";
@@ -49,8 +49,8 @@ buildPythonPackage rec {
   ];
 
   passthru.optional-dependencies = {
-    plots = [ matplotlib ipython ];
-    others = [ lime ];
+    plots = [matplotlib ipython];
+    others = [lime];
   };
 
   # TODO FIXME

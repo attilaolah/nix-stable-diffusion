@@ -1,9 +1,11 @@
 # WARNING: This file was automatically generated. You should avoid editing it.
 # If you run pynixify again, the file will be either overwritten or
 # deleted, and you will lose the changes you made to it.
-
-{ buildPythonPackage, fetchPypi, lib }:
-
+{
+  buildPythonPackage,
+  fetchPypi,
+  lib,
+}:
 buildPythonPackage rec {
   pname = "getpass-asterisk";
   version = "1.0.1";
@@ -18,8 +20,7 @@ buildPythonPackage rec {
   doCheck = false;
 
   meta = with lib; {
-    description =
-      "An alternative implementation for getpass that echoes masked password (such as asterisks)";
+    description = "An alternative implementation for getpass that echoes masked password (such as asterisks)";
     homepage = "https://github.com/secursive/getpass_asterisk";
   };
 }

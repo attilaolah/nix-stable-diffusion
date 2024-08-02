@@ -1,11 +1,14 @@
-{ buildPythonPackage, fetchPypi, lib
-, numpy
-, packaging
-, psutil
-, pyyaml
-, torch
-, transformers
-, accelerate
+{
+  buildPythonPackage,
+  fetchPypi,
+  lib,
+  numpy,
+  packaging,
+  psutil,
+  pyyaml,
+  torch,
+  transformers,
+  accelerate,
 }:
 buildPythonPackage rec {
   pname = "peft";

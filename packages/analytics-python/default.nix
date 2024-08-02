@@ -1,13 +1,13 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, pythonOlder
-, requests
-, monotonic
-, backoff
-, python-dateutil
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  pythonOlder,
+  requests,
+  monotonic,
+  backoff,
+  python-dateutil,
 }:
-
 buildPythonPackage rec {
   pname = "analytics-python";
   version = "1.4.0";
@@ -47,6 +47,6 @@ buildPythonPackage rec {
     homepage = "https://segment.com/libraries/python";
     description = "Hassle-free way to integrate analytics into any python application";
     license = licenses.mit;
-    maintainers = with maintainers; [ pbsds ];
+    maintainers = with maintainers; [pbsds];
   };
 }
