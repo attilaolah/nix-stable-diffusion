@@ -4,9 +4,7 @@
 {
   buildPythonPackage,
   fetchPypi,
-  lib,
   torch,
-  fetchFromGitHub,
   pyparsing,
   transformers,
   diffusers,
@@ -35,7 +33,7 @@ buildPythonPackage rec {
   cargoDeps = rustPlatform.fetchCargoTarball {
     inherit src sourceRoot;
     name = sourceRoot;
-    hash = "sha256-3SluST4muwNxgt+GQ6ZuZ62TfMr5ZYiYN9M0QyhmsWc=";
+    hash = "sha256-m1pB2SqFFlx/YFblGvmRlV7Iwx+ei2gx7PUq6wZIoa4=";
     patches = [./cargo-lock.patch];
   };
 
@@ -44,7 +42,7 @@ buildPythonPackage rec {
   # TODO FIXME
   doCheck = false;
 
-  meta = with lib; {
+  meta = {
     description = "A text prompt weighting and blending library for transformers-type text embedding systems";
     homepage = "https://pypi.org/project/compel/#description";
   };
